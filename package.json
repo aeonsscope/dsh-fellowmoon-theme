@@ -1,0 +1,57 @@
+{
+  "name": "dsh-fellowmoon-theme",
+  "version": "0.4.0",
+  "description": "FellowMoon 主题：以《新月同行》超现象管理局「橙·黑·白」配色重构的 DSH 桌面主题（含侧栏个人背景与 CPO 开机动画）",
+  "type": "module",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aeonsscope/dsh-fellowmoon-theme.git"
+  },
+  "homepage": "https://github.com/aeonsscope/dsh-fellowmoon-theme#readme",
+  "bugs": {
+    "url": "https://github.com/aeonsscope/dsh-fellowmoon-theme/issues"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "src",
+    "scripts",
+    "tests",
+    "assets",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-theme",
+        "@deepseek-ai/dsh-client-ui-settings-general",
+        "@deepseek-ai/dsh-client-locale"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "theme",
+    "fellowmoon",
+    "chaoguanju"
+  ]
+}
